@@ -1,0 +1,67 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/navbar-fixed-side.css" rel="stylesheet" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <ul class="nav navbar-nav">
+        <li><a href="https://justinkim668.github.io/index.html">About Me</a></li>
+        <li><a href="https://justinkim668.github.io/projects.html">Projects</a></li>
+        <li><a href="https://justinkim668.github.io/cendas.html">Cendas Documentation</a></li>
+      </ul>
+    </div>
+  </nav>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-3 col-lg-2">
+        <nav class="navbar navbar-default navbar-fixed-side">
+          <ul class="nav navbar-nav">
+            <li><a href="https://justinkim668.github.io/cendas_documentation/v0.0.1/v001.html">Version 0.0.1 Description</a></li>
+            <li><a href="https://justinkim668.github.io/cendas_documentation/v0.0.1/state_column.html">cendas.state_column</a></li>
+            <li><a href="https://justinkim668.github.io/cendas_documentation/v0.0.1/state_abb_column.html">cendas.state_abb_column</a></li>
+            <li><a href="https://justinkim668.github.io/cendas_documentation/v0.0.1/conus_only.html">cendas.conus_only</a></li>
+            <li><a href="https://justinkim668.github.io/cendas_documentation/v0.0.1/oconus.html">cendas.oconus</a></li>
+            <li><a href="https://justinkim668.github.io/cendas_documentation/v0.0.1/geoid_to_tract.html">cendas.geoid_to_tract</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="container">
+        <div class = "col-sm-9 col-lg-10">
+          <h1>cendas.oconus</h1>
+          <h3>cendas.oconus(data_frame: pandas.DataFrame(), tractcode_column: str)</h3>
+          <h3>Parameters/Arguments</h3>
+          <ul>
+            <li>data_frame</li>
+            <ul>
+              <li>A pandas dataframe.</li>
+            </ul>
+            <li>tractcode_column</li>
+            <ul>
+              <li>The name of the column in the dataframe containing census tractcode/blockcode data as a string.</li>
+            </ul>
+          </ul>
+          <h3>Description</h3>
+          <p>Takes a pandas dataframe and the name of the dataframe column containing census tractcode/blockcode data as arguments.
+            Parses tractcode data to filter out data from census tracts located within the continental US (e.g. Hawaii, Alaska, Pureto Rico, etc.).
+            Returns a pandas data frame with data only from tractcodes located outside the continental US (CONUS).  Peforms the exact opposite operation
+            of the cendas.conus_onlu method.
+          </p>
+          <h3>Why This Method is Useful</h3>
+          <p>There are always going to be stark statistical differences in many aspects between areas located within the continental United States and
+            outside the conitnental United States.  Many research endeavors, especially those involved with reseraching infratructure or funding related
+            matters, differentiate between CONUS and OCONUS regions because the unique geographies of OCONUS regions warrant separate analyses. For
+            example, the unique geogrphy of Alaska presents unique challenges to the development of broadband infratructure not present in the continental
+            United States.  As such, Alaska should be evaluated separately from the rest of the continenal US when researching broadband infrastructure.
+          </p>
+          </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
