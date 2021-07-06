@@ -1,0 +1,86 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/navbar-fixed-side.css" rel="stylesheet" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <ul class="nav navbar-nav">
+        <li><a href="https://justinkim668.github.io/index.html">About Me</a></li>
+        <li><a href="https://justinkim668.github.io/projects.html">Projects</a></li>
+        <li><a href="https://justinkim668.github.io/cendas.html">Cendas Documentation</a></li>
+      </ul>
+    </div>
+  </nav>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-3 col-lg-2">
+        <nav class="navbar navbar-default navbar-fixed-side">
+          <ul class="nav navbar-nav">
+            <li><a href="https://justinkim668.github.io/cendas_documentation/v0.0.2/v002.html">Version 0.0.2 Description</a></li>
+            <li><a href="https://justinkim668.github.io/cendas_documentation/v0.0.2/state_column.html">cendas.state_column</a></li>
+            <li><a href="https://justinkim668.github.io/cendas_documentation/v0.0.2/conus_only.html">cendas.conus_only</a></li>
+            <li><a href="https://justinkim668.github.io/cendas_documentation/v0.0.2/oconus.html">cendas.oconus</a></li>
+            <li><a href="https://justinkim668.github.io/cendas_documentation/v0.0.2/geoid_to_tract.html">cendas.geoid_to_tract</a></li>
+            <li><a href="https://justinkim668.github.io/cendas_documentation/v0.0.2/add_zero.html">cendas.add_zero</a></li>
+            <li><a href="https://justinkim668.github.io/cendas_documentation/v0.0.2/read_csv.html">cendas.read_csv</a></li>
+            <li><a href="https://justinkim668.github.io/cendas_documentation/v0.0.2/read_multiple_csv.html">cendas.read_multuple_csv</a></li>
+            <li><a href="https://justinkim668.github.io/cendas_documentation/v0.0.2/merge.html">cendas.merge</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="container">
+        <div class = "col-sm-9 col-lg-10">
+          <h1>cendas.read_csv</h1>
+          <h3>cendas.read_csv(file_path: str)</h3>
+          <h3>Parameters/Arguments</h3>
+          <ul>
+            <li>file_path</li>
+            <ul>
+              <li>The file path indicating where the .csv file is located</li>
+            </ul>
+          </ul>
+          <h3>Description</h3>
+          <p>
+            Takes a file path of a .csv file as an argument. Automates the process of identifying tractcode or blockcode data within the dataset
+            so that the codes can be read as type string as opposed to type int/float.  Returns a pandas dataframe with the data from the .csv file.
+            The cendas.read_csv method makes the 'dtype' and 'converters' arguments from the pandas.read_csv method unnecessary when it comes to
+            making sure that the tractcodes and blockcodes are read as type string instead of type int/float.
+          </p>
+          <p>
+            The argument assumes the following:
+            <ul>
+              <li>
+                The dataframe column names are already listed out in the first line of the .csv file.  This method will not work if the .csv files
+                do not contain the column names in the first line.
+              </li>
+            </ul>
+          </p>
+          <h3>Why This Method is Useful</h3>
+          <p>
+            Currently, the pandas.read_csv method reads tractcodes and block codes from US government agencis as type int by default.  This causes the leading zeros to be dropped
+            from the tractcode/blockcode data.  Given the fact that the fist 2 digits of every tractcode/blockcode indicate which state a tract or block
+            is located in, dropping leading zeros will cause problems with analyzing codes starting with digits '01' all the way to '09.'  For example, the
+            tractcode '01001020100' is located in Alabama because the first 2 digits '01' correspond with the state of Alabama.  However, if the leading zero
+            was dropped because the tractcode data was read as type int or float as opposed to type string, we'd have '1001020100' as the tractcode instead,
+            where the first 2 digits '10' correspond with the state of Delaware. The exclusion of leading zeros from tractcode/blockcode data can cause huge
+            inaccuracies in geographic analyses. To avoid ths, it is necessary to explcitly declare that the column names containing the tractcodes and block codes
+            be read as strings using the 'dtype' or 'converters' arguments when using the pandas.read_csv method.  This is not a terrible workaround if a pandas
+            user is using 1 or 2 datasets.  However, if a user is using many datasets, this  can be pretty
+            inefficient, especially given that column names containing tractcode or blockcode data can have different names across different datasets.  For example,
+            a column containing block code data in one dataset may simply be named 'block' in one .csv file and 'block_code' in a different .csv file, and the pandas.read_csv
+            method currently requires a user to declare the exact names of all the columns they want read as a certain data types.  The cendas.read_csv method automates the
+            process of identifying the exact names of these columns and allows tractcodes/blockcodes to be read as type strings by default without the need for the user to explicitly
+            declare this. 
+          </p>
+          </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
