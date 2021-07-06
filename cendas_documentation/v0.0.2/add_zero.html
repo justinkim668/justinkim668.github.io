@@ -63,7 +63,7 @@
           </p>
           <h3>Why This Method is Useful</h3>
           <p>In many instances, tractcode and blockcode data are read as type int or type float as opposed to type string.  When this happens,
-            this causes the leading zeros to be dropped from the tractcode/blockcode data.  Given the fact that the fist 2 digits of
+            this causes the leading zeros to be dropped from the tractcode/blockcode data.  Given the fact that the first 2 digits of
             every tractcode/blockcode indicate which state a tract or block is located in, dropping leading zeros will cause problems with analyzing
             codes starting with digits '01' all the way to '09.'  For example, the tractcode '01001020100' is located in Alabama because the first 2 digits
             '01' correspond with the state of Alabama.  However, if the leading zero was dropped because the tractcode data was read as type int or float as opposed
