@@ -69,7 +69,8 @@
             '01' correspond with the state of Alabama.  However, if the leading zero was dropped because the tractcode data was read as type int or float as opposed
             to type string, we'd have '1001020100' as the tractcode instead, where the first 2 digits '10' correspond with the state of Delaware. The exclusion
             of leading zeros from tractcode/blockcode data can cause huge inaccuracies in geographic analyses.  As such, it is necessary to verify that
-            all the necessary leading zeros have been included in the data.       
+            all the necessary leading zeros have been included in the data.  The cendas.add_zero method allows a user to ensure that all the necessary
+            leading zeros have been included within their tractcode/blockcode data.
           </p>
           </div>
       </div>
