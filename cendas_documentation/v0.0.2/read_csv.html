@@ -64,7 +64,7 @@
           <h3>Why This Method is Useful</h3>
           <p>
             Currently, the pandas.read_csv method reads tractcodes and block codes from US government agencies as type int by default.  This causes the leading zeros to be dropped
-            from the tractcode/blockcode data.  Given the fact that the fist 2 digits of every tractcode/blockcode indicate which state a tract or block
+            from the tractcode/blockcode data.  Given the fact that the first 2 digits of every tractcode/blockcode indicate which state a tract or block
             is located in, dropping leading zeros will cause problems with analyzing codes starting with digits '01' all the way to '09.'  For example, the
             tractcode '01001020100' is located in Alabama because the first 2 digits '01' correspond with the state of Alabama.  However, if the leading zero
             was dropped because the tractcode data was read as type int or float as opposed to type string, we'd have '1001020100' as the tractcode instead,
