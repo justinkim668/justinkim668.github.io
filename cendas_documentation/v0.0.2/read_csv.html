@@ -69,7 +69,10 @@
             tractcode '01001020100' is located in Alabama because the first 2 digits '01' correspond with the state of Alabama.  However, if the leading zero
             was dropped because the tractcode data was read as type int or float as opposed to type string, we'd have '1001020100' as the tractcode instead,
             where the first 2 digits '10' correspond with the state of Delaware. The exclusion of leading zeros from tractcode/blockcode data can cause huge
-            inaccuracies in geographic analyses. To avoid ths, it is necessary to explcitly declare that the column names containing the tractcodes and block codes
+            inaccuracies in geographic analyses.
+          </p>
+          <p> 
+            To avoid ths, it is necessary to explcitly declare that the column names containing the tractcodes and block codes
             be read as strings using the 'dtype' or 'converters' arguments when using the pandas.read_csv method.  This is not a terrible workaround if a pandas
             user is using 1 or 2 datasets.  However, if a user is using many datasets, this can be very
             inefficient, especially given that column names containing tractcode or blockcode data can have different names across different datasets.  For example,
