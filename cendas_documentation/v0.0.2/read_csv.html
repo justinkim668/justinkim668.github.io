@@ -53,7 +53,7 @@
             making sure that the tractcodes and blockcodes are read as type string instead of type int/float.
           </p>
           <p>
-            The argument assumes the following:
+            The method assumes the following:
             <ul>
               <li>
                 The dataframe column names are already listed out in the first line of the .csv file.  This method will not work if the .csv files
@@ -71,7 +71,7 @@
             where the first 2 digits '10' correspond with the state of Delaware. The exclusion of leading zeros from tractcode/blockcode data can cause huge
             inaccuracies in geographic analyses.
           </p>
-          <p> 
+          <p>
             To avoid ths, it is necessary to explcitly declare that the column names containing the tractcodes and block codes
             be read as strings using the 'dtype' or 'converters' arguments when using the pandas.read_csv method.  This is not a terrible workaround if a pandas
             user is using 1 or 2 datasets.  However, if a user is using many datasets, this can be very
