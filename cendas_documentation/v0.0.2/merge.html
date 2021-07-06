@@ -47,20 +47,26 @@
           </ul>
           <h3>Description</h3>
           <p>
-            Takes a list of pandas dataframes as an argument. Performs a SQL-style inner join for all the dataframes in the list. Returns a single dataframe
-            where all the dataframes in the list have been merged.  This method can be used on a list of 2 or more pandas dataframes.
+            Takes a list of pandas dataframes as an argument. Merges the dataframes in pandas-style inner merge. Returns a single dataframe where
+            all the dataframes in the list have been merged.  This method can be used on a list of 2 or more pandas dataframes.
           </p>
           <p>
             The argument assumes the following:
             <ul>
-              <li>The user wants to perform a SQL-style inner join where the intersection of keys from the dataframes will be used.</li>
+              <li>
+                The user wants to perform a pandas-style inner join where the intersection of keys from the dataframes will be used.
+                This should probably isn't necessary to include as an assumption because most pandas users perform inner merges by default anyway with pandas.merge().
+                However, it is necessary to point out that the cendas.merge() method does not currently suppot left-joins, right joins, outer joins, outer joins,
+                or cross joins. If you need some clarification as to what the different types of joins mean, please check this link:
+                <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.merge.html">https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.merge.html</a>
+              </li>
             </ul>
           </p>
           <h3>Why This Method is Useful</h3>
           <p>
-            Currently, the pandas.merge() method only allows the user to merge 2 dataframes at a time.  However, this becomes highly inefficient when
+            Currently, the pandas.merge() method only allows the user to merge 2 dataframes at a time.  This becomes highly inefficient when
             a user needs to merge many different dataframes.  A good example of this is a user who is trying to merge dataframes containing data from different
-            years into a single dataframe.  
+            years into a single dataframe.
           </p>
           </div>
       </div>
