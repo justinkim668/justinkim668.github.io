@@ -1,0 +1,70 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/navbar-fixed-side.css" rel="stylesheet" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <ul class="nav navbar-nav">
+        <li><a href="https://justinkim668.github.io/index.html">About Me</a></li>
+        <li><a href="https://justinkim668.github.io/projects.html">Projects</a></li>
+        <li><a href="https://justinkim668.github.io/cendas.html">Cendas Documentation</a></li>
+      </ul>
+    </div>
+  </nav>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-3 col-lg-2">
+        <nav class="navbar navbar-default navbar-fixed-side">
+          <ul class="nav navbar-nav">
+            <li><a href="https://justinkim668.github.io/cendas_documentation/v0.0.2/v002.html">Version 0.0.2 Description</a></li>
+            <li><a href="https://justinkim668.github.io/cendas_documentation/v0.0.2/state_column.html">cendas.state_column</a></li>
+            <li><a href="https://justinkim668.github.io/cendas_documentation/v0.0.2/conus_only.html">cendas.conus_only</a></li>
+            <li><a href="https://justinkim668.github.io/cendas_documentation/v0.0.2/oconus.html">cendas.oconus</a></li>
+            <li><a href="https://justinkim668.github.io/cendas_documentation/v0.0.2/geoid_to_tract.html">cendas.geoid_to_tract</a></li>
+            <li><a href="https://justinkim668.github.io/cendas_documentation/v0.0.2/add_zero.html">cendas.add_zero</a></li>
+            <li><a href="https://justinkim668.github.io/cendas_documentation/v0.0.2/read_csv.html">cendas.read_csv</a></li>
+            <li><a href="https://justinkim668.github.io/cendas_documentation/v0.0.2/read_multiple_csv.html">cendas.read_multuple_csv</a></li>
+            <li><a href="https://justinkim668.github.io/cendas_documentation/v0.0.2/merge.html">cendas.merge</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="container">
+        <div class = "col-sm-9 col-lg-10">
+          <h1>cendas.merge</h1>
+          <h3>cendas.merge(data_frame_list: list)</h3>
+          <h3>Parameters/Arguments</h3>
+          <ul>
+            <li>data_frame_list</li>
+            <ul>
+              <li>A  list of pandas dataframes.</li>
+            </ul>
+          </ul>
+          <h3>Description</h3>
+          <p>
+            Takes a list of pandas dataframes as an argument. Performs a SQL-style inner join for all the dataframes in the list. Returns a single dataframe
+            where all the dataframes in the list have been merged.  This method can be used on a list of 2 or more pandas dataframes.
+          </p>
+          <p>
+            The argument assumes the following:
+            <ul>
+              <li>The user wants to perform a SQL-style inner join where the intersection of keys from the dataframes will be used.</li>
+            </ul>
+          </p>
+          <h3>Why This Method is Useful</h3>
+          <p>
+            Currently, the pandas.merge() method only allows the user to merge 2 dataframes at a time.  However, this becomes highly inefficient when
+            a user needs to merge many different dataframes.  A good example of this is a user who is trying to merge dataframes containing data from different
+            years into a single dataframe.  
+          </p>
+          </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
