@@ -13676,7 +13676,7 @@ memory usage: 1.7+ MB
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>In order for the pandas.read_csv to read the tractcode data correctly, the column name containing the tractcode data must be excplictly declared in the 'converters' argument.  This isn't such a bad workaround if you are using 1-2 datasets.  However, if you are using multiple datasets, having to delcare this every time you use pandas.read_csv beocomes very inefficient.</p>
+<p>In order for the pandas.read_csv to read the tractcode data correctly, the column name containing the tractcode data must be excplictly declared in the 'converters' argument.  This isn't such a bad workaround if you are using 1-2 datasets.  However, if you are using multiple datasets, having to delcare this every time you use pandas.read_csv becomes very inefficient.</p>
 <p>The cendas.read_csv is a "smarter" .csv parser that automates the process of identifying the exact names of these columns and allows tractcodes/blockcodes to be read as type strings by default without the need for the user to explicitly declare this.</p>
 
 </div>
