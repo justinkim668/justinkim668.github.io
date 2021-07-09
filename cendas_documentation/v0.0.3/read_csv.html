@@ -77,7 +77,7 @@
             user is using 1 or 2 datasets.  However, if a user is using many datasets, this can be very
             inefficient, especially given that column names containing tractcode or blockcode data can have different names across different datasets.  For example,
             a column containing block code data in one dataset may simply be named 'block' in one .csv file and 'block_code' in a different .csv file, and the pandas.read_csv
-            method currently requires a user to declare the exact names of all the columns they want read as a certain data types.  The cendas.read_csv
+            method currently requires a user to declare the exact names of all the columns they want read as a certain data type.  The cendas.read_csv
             is a "smarter" .csv parser that automates the process of identifying the exact names of these columns and allows tractcodes/blockcodes to be read as type strings by default
             without the need for the user to explicitly declare this.
           </p>
