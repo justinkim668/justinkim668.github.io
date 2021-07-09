@@ -13538,7 +13538,7 @@ memory usage: 125.1+ KB
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>This is data that was taken from a BigQuery database -- the person uploading it did not indicate the table schema properly and thus, the data in the 'block_fips' column is type int and the leading zeros were dropped. This is demonstrated by the fact that The leading 2 digits in the 'block_fips' column in rows 2 and 3 of the data frame should be '04' to indicate the state of Arizona instead of '40.' Below is a demonstration of how one would fix this issue using cendas and how that compares to using pandas.</p>
+<p>This is data that was taken from a BigQuery database -- the person uploading it did not indicate the table schema properly and thus, the data in the 'block_fips' column is type int instead of type string and the leading zeros were dropped. This is demonstrated by the fact that The leading 2 digits in the 'block_fips' column in rows 2 and 3 of the data frame should be '04' to indicate the state of Arizona instead of '40.' Below is a demonstration of how one would fix this issue using cendas and how that compares to using pandas.</p>
 
 </div>
 </div>
