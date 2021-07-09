@@ -3,7 +3,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
-  <link href="css/navbar-fixed-side.css" rel="stylesheet" />
+  <link href="css/navbar-fixed-side.css" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
@@ -21,13 +21,15 @@
       <div class="col-sm-3 col-lg-2">
         <nav class="navbar navbar-default navbar-fixed-side">
           <ul class="nav navbar-nav">
-            <li><a href="https://justinkim668.github.io/cendas_documentation/v0.0.1/v001.html">Version 0.0.1 Description</a></li>
-            <li><a href="https://justinkim668.github.io/cendas_documentation/v0.0.1/state_column.html">cendas.state_column</a></li>
-            <li><a href="https://justinkim668.github.io/cendas_documentation/v0.0.1/state_abb_column.html">cendas.state_abb_column</a></li>
-            <li><a href="https://justinkim668.github.io/cendas_documentation/v0.0.1/conus_only.html">cendas.conus_only</a></li>
-            <li><a href="https://justinkim668.github.io/cendas_documentation/v0.0.1/oconus.html">cendas.oconus</a></li>
-            <li><a href="https://justinkim668.github.io/cendas_documentation/v0.0.1/geoid_to_tract.html">cendas.geoid_to_tract</a></li>
-          </ul>
+            <li><a href="https://justinkim668.github.io/cendas_documentation/v0.0.3/v003.html">Version 0.0.3 Description</a></li>
+            <li><a href="https://justinkim668.github.io/cendas_documentation/v0.0.3/state_column.html">cendas.state_column</a></li>
+            <li><a href="https://justinkim668.github.io/cendas_documentation/v0.0.3/conus_only.html">cendas.conus_only</a></li>
+            <li><a href="https://justinkim668.github.io/cendas_documentation/v0.0.3/oconus.html">cendas.oconus</a></li>
+            <li><a href="https://justinkim668.github.io/cendas_documentation/v0.0.3/geoid_to_tract.html">cendas.geoid_to_tract</a></li>
+            <li><a href="https://justinkim668.github.io/cendas_documentation/v0.0.3/add_zero.html">cendas.add_zero</a></li>
+            <li><a href="https://justinkim668.github.io/cendas_documentation/v0.0.3/read_csv.html">cendas.read_csv</a></li>
+            <li><a href="https://justinkim668.github.io/cendas_documentation/v0.0.3/read_multiple_csv.html">cendas.read_multuple_csv</a></li>
+            <li><a href="https://justinkim668.github.io/cendas_documentation/v0.0.3/merge.html">cendas.merge</a></li>
         </nav>
       </div>
       <div class="container">
@@ -48,16 +50,18 @@
           <h3>Description</h3>
           <p>Takes a pandas dataframe and the name of the dataframe column containing census tractcode/blockcode data as arguments.
             Parses tractcode data to filter out data from census tracts located within the continental US (e.g. Hawaii, Alaska, Pureto Rico, etc.).
-            Returns a pandas data frame with data only from tractcodes located outside the continental US (CONUS).  Peforms the exact opposite operation
+            Returns a pandas data frame with data only from tractcodes located outside the continental US (OCONUS).  Peforms the exact opposite operation
             of the cendas.conus_only method.
           </p>
           <h3>Why This Method is Useful</h3>
           <p>There are always going to be stark statistical differences in many aspects between areas located within the continental United States and
-            outside the conitnental United States.  Many research endeavors, especially those involved with reseraching infratructure or funding related
+            outside the conitnental United States.  Many research endeavors, especially those involved with researching infratructure or funding related
             matters, differentiate between CONUS and OCONUS regions because the unique geographies of OCONUS regions warrant separate analyses. For
             example, the unique geography of Alaska presents unique challenges to the development of broadband infratructure not present in the continental
             United States.  As such, Alaska should be evaluated separately from the rest of the continenal US when researching broadband infrastructure.
           </p>
+          <h3>Cendas vs Pandas Comparison</h3>
+          <p><a href="https://justinkim668.github.io/cendas_documentation/demos/oconus.html">Click Here for Demo</a></p>
           </div>
       </div>
     </div>
